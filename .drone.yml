@@ -11,3 +11,18 @@ steps:
   commands:
   - echo hello
   - echo world
+
+- name: foo
+  image: alpine
+  commands:
+  - touch hello.txt
+
+- name: bar
+  image: alpine
+  commands:
+  - ls hello.txt
+
+- name: clone-google-kaniko
+  image: drone/git
+  commands: 
+  - git clone https://github.com/GoogleContainerTools/kaniko /go/src/github.com/GoogleContainerTools/kaniko

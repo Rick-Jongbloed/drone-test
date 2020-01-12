@@ -1,14 +1,13 @@
 kind: pipeline
 type: kubernetes
-name: drone-test
+name: default
 
-platform:
-  os: linux
-  arch: arm
+clone:
+  disable: true
 
 steps:
-- name: clone-google-kaniko
-  image: drone/git
-  commands: 
-  - git clone https://github.com/GoogleContainerTools/kaniko /go/src/github.com/GoogleContainerTools/kaniko
-  - ls -R
+- name: greeting
+  image: alpine
+  commands:
+  - echo hello
+  - echo world
